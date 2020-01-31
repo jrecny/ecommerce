@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const usersRepo = require('./repositories/users');
+const chalk = require('chalk');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -49,5 +50,5 @@ app.post('/', async (req, res) => {
 });
 
 app.listen(3000, () => {
-	console.log('Listening on 3000');
+	console.log(chalk.black.bgWhite('Listening on 3000'));
 });
